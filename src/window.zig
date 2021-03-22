@@ -11,7 +11,7 @@ pub const Window = struct {
     handle: *c.GLFWwindow,
 
     pub const ClientApi = enum(i32) {
-        OpenGLApi   = c.GLFW_OPENLG_API,
+        OpenGLApi   = c.GLFW_OPENGL_API,
         OpenGLESApi = c.GLFW_OPENGL_ES_API,
         NoApi       = c.GLFW_NO_API,
     };
@@ -44,12 +44,13 @@ pub const Window = struct {
         Resizable               = c.GLFW_RESIZABLE,
         Visible                 = c.GLFW_VISIBLE,
         Decorated               = c.GLFW_DECORATED,
+        DepthBits               = c.GLFW_DEPTH_BITS,
         Focused                 = c.GLFW_FOCUSED,
         AutoIconify             = c.GLFW_AUTO_ICONIFY,
         Floating                = c.GLFW_FLOATING,
         Maximized               = c.GLFW_MAXIMIZED,
         CenterCursor            = c.GLFW_CENTER_CURSOR,
-        TransparentFramebuffer  = c.GLFW_TRANPARENT_FRAMEBUFFER,
+        TransparentFramebuffer  = c.GLFW_TRANSPARENT_FRAMEBUFFER,
         FocusOnShow             = c.GLFW_FOCUS_ON_SHOW,
         ScaleToMonitor          = c.GLFW_SCALE_TO_MONITOR,
         RedBits                 = c.GLFW_RED_BITS,
@@ -62,6 +63,7 @@ pub const Window = struct {
         AccumAlphaBits          = c.GLFW_ACCUM_ALPHA_BITS,
         AuxBuffers              = c.GLFW_AUX_BUFFERS,
         Stereo                  = c.GLFW_STEREO,
+        StencilBits             = c.GLFW_STENCIL_BITS,
         Samples                 = c.GLFW_SAMPLES,
         SRGBCapable             = c.GLFW_SRGB_CAPABLE,
         DoubleBuffer            = c.GLFW_DOUBLEBUFFER,
@@ -71,7 +73,7 @@ pub const Window = struct {
         ContextVersionMajor     = c.GLFW_CONTEXT_VERSION_MAJOR,
         ContextVersionMinor     = c.GLFW_CONTEXT_VERSION_MINOR,
         OpenGLForwardCompat     = c.GLFW_OPENGL_FORWARD_COMPAT,
-        OpenGLDebugContext      = c.GLFW_OPENGGL_DEBUG_CONTEXT,
+        OpenGLDebugContext      = c.GLFW_OPENGL_DEBUG_CONTEXT,
         OpenGLProfile           = c.GLFW_OPENGL_PROFILE,
         ContextRobustness       = c.GLFW_CONTEXT_ROBUSTNESS,
         ContextReleaseBehavior  = c.GLFW_CONTEXT_RELEASE_BEHAVIOR,
@@ -84,6 +86,7 @@ pub const Window = struct {
     };
 
     pub const Hint = union(HintName) {
+        ContextNoError: bool,
         Resizable: bool,
         Visible: bool,
         Decorated: bool,
@@ -150,6 +153,7 @@ pub const Window = struct {
     /// or functions.
     pub fn hint(hint: Hint) !void {
         switch (hint) {
+            .ContextNoError         => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
             .Resizable              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
             .Visible                => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
             .Decorated              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
@@ -194,7 +198,7 @@ pub const Window = struct {
         }
 
         glfw.getError() catch |err| switch (err) {
-            .NotInitialized => return err,
+            error.NotInitialized => return err,
             else => unreachable,
         };
     }
@@ -209,7 +213,7 @@ pub const Window = struct {
         Decorated               = c.GLFW_DECORATED,
         AutoIconify             = c.GLFW_AUTO_ICONIFY,
         Floating                = c.GFLW_FLOATING,
-        TransparentFramebuffer  = c.GLFW_TRANPARENT_FRAMEBUFFER,
+        TransparentFramebuffer  = c.GLFW_TRANSPARENT_FRAMEBUFFER,
         FocusOnShow             = c.GLFW_FOCUS_ON_SHOW,
         ClientApi               = c.GLFW_CLIENT_API,
         ContextCreationApi      = c.GLFW_CONTEXT_CREATION_API,
