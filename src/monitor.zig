@@ -41,7 +41,9 @@ pub const Monitor = packed struct {
         };
 
         if (maybeHandle) |handle| {
-            return Monitor{ .handle = handle, };
+            return Monitor{
+                .handle = handle,
+            };
         } else {
             return null;
         }
@@ -60,8 +62,7 @@ pub const Monitor = packed struct {
         c.glfwGetMonitorPos(self.handle, &pos.x, &pos.y);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -88,8 +89,7 @@ pub const Monitor = packed struct {
         c.glfwGetMonitorWorkarea(self.handle, &workarea.x, &workarea.y, &workarea.width, &workarea.height);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -144,8 +144,7 @@ pub const Monitor = packed struct {
         c.glfwGetMonitorContentScale(self.handle, &contentScale.x, &contentScale.y);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -207,8 +206,7 @@ pub const Monitor = packed struct {
         var handles = c.glfwGetVideoModes(self.handle, &count);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -222,8 +220,7 @@ pub const Monitor = packed struct {
         var videoMode = c.glfwGetVideoMode(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -245,9 +242,7 @@ pub const Monitor = packed struct {
         c.glfwSetGamma(self.handle, gamma);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.InvalidValue,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.InvalidValue, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -257,8 +252,7 @@ pub const Monitor = packed struct {
         var gammaRamp = c.glfwGetGammaRamp(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -296,8 +290,7 @@ pub const Monitor = packed struct {
         c.glfwSetGammaRamp(self.handle, &raw);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }

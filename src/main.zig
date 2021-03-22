@@ -91,7 +91,7 @@ pub fn getError() Error!void {
         c.GLFW_PLATFORM_ERROR => return Error.PlatformError,
         c.GLFW_FORMAT_UNAVAILABLE => return Error.FormatUnavailable,
         c.GLFW_NO_WINDOW_CONTEXT => return Error.NoWindowContext,
-        else => |code| std.debug.panic("unknown code: {}\n", .{ code }),
+        else => |code| std.debug.panic("unknown code: {}\n", .{code}),
     };
 }
 
@@ -157,16 +157,13 @@ pub const Hint = union(HintName) {
 /// take effect during initialization. Once GLFW has been initialized,
 /// any values you set will be ignored until the library is terminated
 /// and initialized again.
-
 /// Some hints are platform specific. These may be set on any platform
 /// but they will only affect their specific platform. Other platforms
 /// will ignore them. Setting these hints requires no platform specific
 /// headers or functions.
-pub fn hint(hint: Hint) void {
+pub fn setHint(hint: Hint) void {
     c.glfwInitHint(@enumToInt(hint), switch (hint) {
-        .JoystickHatButtons     => |value| toGLFWBool(value),
-        .CocoaChdirResources    => |value| toGLFWBool(value),
-        .CocoaMenubar           => |value| toGLFWBool(value),
+        .JoystickHatButtons, .CocoaChdirResources, .CocoaMenubar => |value| toGLFWBool(value),
     });
 }
 
@@ -202,7 +199,7 @@ pub fn getVersionString() [:0]const u8 {
 
 /// This is the function pointer type for error callbacks. An error
 /// callback function has the following signature:
-pub const ErrorCallback = fn(err: Error, description: [:0]const u8) void;
+pub const ErrorCallback = fn (err: Error, description: [:0]const u8) void;
 
 var errorCallback: ?ErrorCallback = null;
 
@@ -219,7 +216,7 @@ fn glfwErrorCallback(code: c_int, description: [*c]const u8) callconv(.C) void {
             c.GLFW_PLATFORM_ERROR => Error.PlatformError,
             c.GLFW_FORMAT_UNAVAILABLE => Error.FormatUnavailable,
             c.GLFW_NO_WINDOW_CONTEXT => Error.NoWindowContext,
-            else => std.debug.panic("unknown code: {}\n", .{ code }),
+            else => std.debug.panic("unknown code: {}\n", .{code}),
         };
 
         callback(err, mem.spanZ(@as([*:0]const u8, description)));
@@ -250,13 +247,15 @@ pub fn setErrorCallback(newErrorCallback: ?ErrorCallback) ?ErrorCallback {
     return oldErrorCallback;
 }
 
-pub const MonitorCallback = fn(monitor: Monitor, event: i32) void;
+pub const MonitorCallback = fn (monitor: Monitor, event: i32) void;
 
 var monitorCallback: ?MonitorCallback = null;
 
 fn glfwMonitorCallback(handle: ?*c.GLFWmonitor, event: i32) callconv(.C) void {
     if (monitorCallback) |callback| {
-        callback(.{ .handle = handle.?, }, event);
+        callback(.{
+            .handle = handle.?,
+        }, event);
     }
 }
 
@@ -290,8 +289,7 @@ pub fn pollEvents() !void {
     c.glfwPollEvents();
 
     getError() catch |err| switch (err) {
-        Error.NotInitialized,
-        Error.PlatformError => return err,
+        Error.NotInitialized, Error.PlatformError => return err,
         else => unreachable,
     };
 }
@@ -324,8 +322,7 @@ pub fn waitEvents() !void {
     c.glfwWaitEvents();
 
     getError() catch |err| switch (err) {
-        Error.NotInitialized,
-        Error.PlatformError => return err,
+        Error.NotInitialized, Error.PlatformError => return err,
         else => unreachable,
     };
 }
@@ -360,8 +357,7 @@ pub fn waitEventsTimeout(timeout: f64) !void {
     c.glfwWaitEventsTimeout(timeout);
 
     getError() catch |err| switch (err) {
-        Error.NotInitialized,
-        Error.PlatformError => return err,
+        Error.NotInitialized, Error.PlatformError => return err,
         else => unreachable,
     };
 }
@@ -372,8 +368,7 @@ pub fn postEmptyEvent() !void {
     c.glfwPostEmptyEvent();
 
     getError() catch |err| switch (err) {
-        Error.NotInitialized,
-        Error.PlatformError => return err,
+        Error.NotInitialized, Error.PlatformError => return err,
         else => unreachable,
     };
 }

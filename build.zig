@@ -19,7 +19,7 @@ pub fn build(b: *Builder) void {
     build_example(b, "monitor");
 }
 
-fn build_example(b: *Builder, comptime name: [:0] const u8) void {
+fn build_example(b: *Builder, comptime name: [:0]const u8) void {
     const mode = b.standardReleaseOptions();
     const exe = b.addExecutable(name, "examples/" ++ name ++ ".zig");
     exe.setBuildMode(mode);
