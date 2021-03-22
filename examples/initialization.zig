@@ -7,5 +7,5 @@ pub fn main() anyerror!void {
     defer glfw.deinit();
 
     std.debug.warn("glfw.getVersion() == {}\n", .{ glfw.getVersion() });
-    std.debug.warn("glfw.getVersionString() == {}\n", .{ glfw.getVersionString() });
+    std.debug.warn("glfw.getVersionString() == {s}\n", .{ glfw.getVersionString() });
 }

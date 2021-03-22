@@ -9,7 +9,7 @@ pub fn main() anyerror!void {
     var primaryMonitor = try glfw.Monitor.primary();
 
     if (primaryMonitor) |pm| {
-        std.debug.warn("primaryMonitor.getName() == {}\n", .{ try pm.getName() });
+        std.debug.warn("primaryMonitor.getName() == {s}\n", .{ try pm.getName() });
         std.debug.warn("primaryMonitor.getPosition() == {}\n", .{ try pm.getPosition() });
         std.debug.warn("primaryMonitor.getWorkarea() == {}\n", .{ try pm.getWorkarea() });
         std.debug.warn("primaryMonitor.getContentScale() == {}\n", .{ try pm.getContentScale() });
@@ -26,6 +26,6 @@ pub fn main() anyerror!void {
     var allMonitors = try glfw.Monitor.all();
 
     for (allMonitors) |monitor| {
-        std.debug.warn("monitor.getName() == {}\n", .{ try monitor.getName() });
+        std.debug.warn("monitor.getName() == {s}\n", .{ try monitor.getName() });
     }
 }

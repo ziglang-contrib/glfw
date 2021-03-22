@@ -401,11 +401,11 @@ pub const Window = struct {
         };
     }
 
-    inline fn toGLFWBool(value: bool) i32 {
+    fn toGLFWBool(value: bool) callconv(.Inline) i32 {
         return if (value) c.GLFW_TRUE else c.GLFW_FALSE;
     }
 
-    inline fn toGLFWInt(value: ?i32) i32 {
+    fn toGLFWInt(value: ?i32) callconv(.Inline) i32 {
         return if (value) |v| v else c.GLFW_DONT_CARE;
     }
 
