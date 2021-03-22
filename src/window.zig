@@ -151,7 +151,7 @@ pub const Window = struct {
     /// they will only affect their specific platform. Other platforms will
     /// ignore them. Setting these hints requires no platform specific headers
     /// or functions.
-    pub fn hint(hint: Hint) !void {
+    pub fn setHint(hint: Hint) !void {
         switch (hint) {
             .ContextNoError         => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
             .Resizable              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
