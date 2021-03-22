@@ -162,7 +162,7 @@ pub const Hint = union(HintName) {
 /// but they will only affect their specific platform. Other platforms
 /// will ignore them. Setting these hints requires no platform specific
 /// headers or functions.
-pub fn hint(hint: Hint) void {
+pub fn setHint(hint: Hint) void {
     c.glfwInitHint(@enumToInt(hint), switch (hint) {
         .JoystickHatButtons     => |value| toGLFWBool(value),
         .CocoaChdirResources    => |value| toGLFWBool(value),
