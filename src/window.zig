@@ -11,27 +11,27 @@ pub const Window = struct {
     handle: *c.GLFWwindow,
 
     pub const ClientApi = enum(i32) {
-        OpenGLApi   = c.GLFW_OPENGL_API,
+        OpenGLApi = c.GLFW_OPENGL_API,
         OpenGLESApi = c.GLFW_OPENGL_ES_API,
-        NoApi       = c.GLFW_NO_API,
+        NoApi = c.GLFW_NO_API,
     };
 
     pub const ContextCreationApi = enum(i32) {
-        NativeContextApi    = c.GLFW_NATIVE_CONTEXT_API,
-        EGLContextApi       = c.GLFW_EGL_CONTEXT_API,
-        OSMesaContextApi    = c.GLFW_OSMESA_CONTEXT_API,
+        NativeContextApi = c.GLFW_NATIVE_CONTEXT_API,
+        EGLContextApi = c.GLFW_EGL_CONTEXT_API,
+        OSMesaContextApi = c.GLFW_OSMESA_CONTEXT_API,
     };
 
     pub const ContextRobustness = enum(i32) {
-        NoRobustness        = c.GLFW_NO_ROBUSTNESS,
+        NoRobustness = c.GLFW_NO_ROBUSTNESS,
         NoResetNotification = c.GLFW_NO_RESET_NOTIFICATION,
-        LoseContextOnReset  = c.GLFW_LOSE_CONTEXT_ON_RESET,
+        LoseContextOnReset = c.GLFW_LOSE_CONTEXT_ON_RESET,
     };
 
     pub const ContextReleaseBehavior = enum(i32) {
-        AnyReleaseBehavior      = c.GLFW_ANY_RELEASE_BEHAVIOR,
-        ReleaseBehaviorFlush    = c.GLFW_RELEASE_BEHAVIOR_FLUSH,
-        ReleaseBehaviorNone     = c.GLFW_RELEASE_BEHAVIOR_NONE,
+        AnyReleaseBehavior = c.GLFW_ANY_RELEASE_BEHAVIOR,
+        ReleaseBehaviorFlush = c.GLFW_RELEASE_BEHAVIOR_FLUSH,
+        ReleaseBehaviorNone = c.GLFW_RELEASE_BEHAVIOR_NONE,
     };
 
     pub const OpenGLProfile = enum(i32) {
@@ -41,48 +41,48 @@ pub const Window = struct {
     };
 
     pub const HintName = enum(i32) {
-        Resizable               = c.GLFW_RESIZABLE,
-        Visible                 = c.GLFW_VISIBLE,
-        Decorated               = c.GLFW_DECORATED,
-        DepthBits               = c.GLFW_DEPTH_BITS,
-        Focused                 = c.GLFW_FOCUSED,
-        AutoIconify             = c.GLFW_AUTO_ICONIFY,
-        Floating                = c.GLFW_FLOATING,
-        Maximized               = c.GLFW_MAXIMIZED,
-        CenterCursor            = c.GLFW_CENTER_CURSOR,
-        TransparentFramebuffer  = c.GLFW_TRANSPARENT_FRAMEBUFFER,
-        FocusOnShow             = c.GLFW_FOCUS_ON_SHOW,
-        ScaleToMonitor          = c.GLFW_SCALE_TO_MONITOR,
-        RedBits                 = c.GLFW_RED_BITS,
-        GreenBits               = c.GLFW_GREEN_BITS,
-        BlueBits                = c.GLFW_BLUE_BITS,
-        AlphaBits               = c.GLFW_ALPHA_BITS,
-        AccumRedBits            = c.GLFW_ACCUM_RED_BITS,
-        AccumGreenBits          = c.GLFW_ACCUM_GREEN_BITS,
-        AccumBlueBits           = c.GLFW_ACCUM_BLUE_BITS,
-        AccumAlphaBits          = c.GLFW_ACCUM_ALPHA_BITS,
-        AuxBuffers              = c.GLFW_AUX_BUFFERS,
-        Stereo                  = c.GLFW_STEREO,
-        StencilBits             = c.GLFW_STENCIL_BITS,
-        Samples                 = c.GLFW_SAMPLES,
-        SRGBCapable             = c.GLFW_SRGB_CAPABLE,
-        DoubleBuffer            = c.GLFW_DOUBLEBUFFER,
-        RefreshRate             = c.GLFW_REFRESH_RATE,
-        ClientApi               = c.GLFW_CLIENT_API,
-        ContextCreationApi      = c.GLFW_CONTEXT_CREATION_API,
-        ContextVersionMajor     = c.GLFW_CONTEXT_VERSION_MAJOR,
-        ContextVersionMinor     = c.GLFW_CONTEXT_VERSION_MINOR,
-        OpenGLForwardCompat     = c.GLFW_OPENGL_FORWARD_COMPAT,
-        OpenGLDebugContext      = c.GLFW_OPENGL_DEBUG_CONTEXT,
-        OpenGLProfile           = c.GLFW_OPENGL_PROFILE,
-        ContextRobustness       = c.GLFW_CONTEXT_ROBUSTNESS,
-        ContextReleaseBehavior  = c.GLFW_CONTEXT_RELEASE_BEHAVIOR,
-        ContextNoError          = c.GLFW_CONTEXT_NO_ERROR,
-        CocoaRetinaFramebuffer  = c.GLFW_COCOA_RETINA_FRAMEBUFFER,
-        CocoaFrameName          = c.GLFW_COCOA_FRAME_NAME,
-        CocoaGraphicsSwitching  = c.GLFW_COCOA_GRAPHICS_SWITCHING,
-        X11ClassName            = c.GLFW_X11_CLASS_NAME,
-        X11InstanceName         = c.GLFW_X11_INSTANCE_NAME,
+        Resizable = c.GLFW_RESIZABLE,
+        Visible = c.GLFW_VISIBLE,
+        Decorated = c.GLFW_DECORATED,
+        DepthBits = c.GLFW_DEPTH_BITS,
+        Focused = c.GLFW_FOCUSED,
+        AutoIconify = c.GLFW_AUTO_ICONIFY,
+        Floating = c.GLFW_FLOATING,
+        Maximized = c.GLFW_MAXIMIZED,
+        CenterCursor = c.GLFW_CENTER_CURSOR,
+        TransparentFramebuffer = c.GLFW_TRANSPARENT_FRAMEBUFFER,
+        FocusOnShow = c.GLFW_FOCUS_ON_SHOW,
+        ScaleToMonitor = c.GLFW_SCALE_TO_MONITOR,
+        RedBits = c.GLFW_RED_BITS,
+        GreenBits = c.GLFW_GREEN_BITS,
+        BlueBits = c.GLFW_BLUE_BITS,
+        AlphaBits = c.GLFW_ALPHA_BITS,
+        AccumRedBits = c.GLFW_ACCUM_RED_BITS,
+        AccumGreenBits = c.GLFW_ACCUM_GREEN_BITS,
+        AccumBlueBits = c.GLFW_ACCUM_BLUE_BITS,
+        AccumAlphaBits = c.GLFW_ACCUM_ALPHA_BITS,
+        AuxBuffers = c.GLFW_AUX_BUFFERS,
+        Stereo = c.GLFW_STEREO,
+        StencilBits = c.GLFW_STENCIL_BITS,
+        Samples = c.GLFW_SAMPLES,
+        SRGBCapable = c.GLFW_SRGB_CAPABLE,
+        DoubleBuffer = c.GLFW_DOUBLEBUFFER,
+        RefreshRate = c.GLFW_REFRESH_RATE,
+        ClientApi = c.GLFW_CLIENT_API,
+        ContextCreationApi = c.GLFW_CONTEXT_CREATION_API,
+        ContextVersionMajor = c.GLFW_CONTEXT_VERSION_MAJOR,
+        ContextVersionMinor = c.GLFW_CONTEXT_VERSION_MINOR,
+        OpenGLForwardCompat = c.GLFW_OPENGL_FORWARD_COMPAT,
+        OpenGLDebugContext = c.GLFW_OPENGL_DEBUG_CONTEXT,
+        OpenGLProfile = c.GLFW_OPENGL_PROFILE,
+        ContextRobustness = c.GLFW_CONTEXT_ROBUSTNESS,
+        ContextReleaseBehavior = c.GLFW_CONTEXT_RELEASE_BEHAVIOR,
+        ContextNoError = c.GLFW_CONTEXT_NO_ERROR,
+        CocoaRetinaFramebuffer = c.GLFW_COCOA_RETINA_FRAMEBUFFER,
+        CocoaFrameName = c.GLFW_COCOA_FRAME_NAME,
+        CocoaGraphicsSwitching = c.GLFW_COCOA_GRAPHICS_SWITCHING,
+        X11ClassName = c.GLFW_X11_CLASS_NAME,
+        X11InstanceName = c.GLFW_X11_INSTANCE_NAME,
     };
 
     pub const Hint = union(HintName) {
@@ -153,48 +153,48 @@ pub const Window = struct {
     /// or functions.
     pub fn setHint(hint: Hint) !void {
         switch (hint) {
-            .ContextNoError         => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .Resizable              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .Visible                => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .Decorated              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .Focused                => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .AutoIconify            => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .Floating               => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .Maximized              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .CenterCursor           => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .ContextNoError => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .Resizable => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .Visible => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .Decorated => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .Focused => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .AutoIconify => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .Floating => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .Maximized => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .CenterCursor => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
             .TransparentFramebuffer => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .FocusOnShow            => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .ScaleToMonitor         => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .RedBits                => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .GreenBits              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .BlueBits               => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .AlphaBits              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .DepthBits              => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .StencilBits            => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .AccumRedBits           => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .AccumGreenBits         => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .AccumBlueBits          => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .AccumAlphaBits         => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .AuxBuffers             => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .Samples                => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .RefreshRate            => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .Stereo                 => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .SRGBCapable            => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .DoubleBuffer           => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .ClientApi              => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
-            .ContextCreationApi     => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
-            .ContextVersionMajor    => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .ContextVersionMinor    => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
-            .ContextRobustness      => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
+            .FocusOnShow => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .ScaleToMonitor => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .RedBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .GreenBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .BlueBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .AlphaBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .DepthBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .StencilBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .AccumRedBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .AccumGreenBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .AccumBlueBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .AccumAlphaBits => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .AuxBuffers => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .Samples => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .RefreshRate => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .Stereo => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .SRGBCapable => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .DoubleBuffer => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .ClientApi => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
+            .ContextCreationApi => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
+            .ContextVersionMajor => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .ContextVersionMinor => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWInt(value)),
+            .ContextRobustness => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
             .ContextReleaseBehavior => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
-            .OpenGLForwardCompat    => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .OpenGLDebugContext     => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .OpenGLProfile          => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
+            .OpenGLForwardCompat => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .OpenGLDebugContext => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
+            .OpenGLProfile => |value| c.glfwWindowHint(@enumToInt(hint), @enumToInt(value)),
             .CocoaRetinaFramebuffer => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .CocoaFrameName         => |value| c.glfwWindowHintString(@enumToInt(hint), value.ptr),
+            .CocoaFrameName => |value| c.glfwWindowHintString(@enumToInt(hint), value.ptr),
             .CocoaGraphicsSwitching => |value| c.glfwWindowHint(@enumToInt(hint), toGLFWBool(value)),
-            .X11ClassName           => |value| c.glfwWindowHintString(@enumToInt(hint), value.ptr),
-            .X11InstanceName        => |value| c.glfwWindowHintString(@enumToInt(hint), value.ptr),
+            .X11ClassName => |value| c.glfwWindowHintString(@enumToInt(hint), value.ptr),
+            .X11InstanceName => |value| c.glfwWindowHintString(@enumToInt(hint), value.ptr),
         }
 
         glfw.getError() catch |err| switch (err) {
@@ -204,28 +204,28 @@ pub const Window = struct {
     }
 
     pub const AttributeName = enum(i32) {
-        Focused                 = c.GLFW_FOCUSED,
-        Iconified               = c.GLFW_ICONIFIED,
-        Maximized               = c.GLFW_MAXIMIZED,
-        Hovered                 = c.GLFW_HOVERED,
-        Visible                 = c.GLFW_VISIBLE,
-        Resizable               = c.GLFW_RESIZABLE,
-        Decorated               = c.GLFW_DECORATED,
-        AutoIconify             = c.GLFW_AUTO_ICONIFY,
-        Floating                = c.GFLW_FLOATING,
-        TransparentFramebuffer  = c.GLFW_TRANSPARENT_FRAMEBUFFER,
-        FocusOnShow             = c.GLFW_FOCUS_ON_SHOW,
-        ClientApi               = c.GLFW_CLIENT_API,
-        ContextCreationApi      = c.GLFW_CONTEXT_CREATION_API,
-        ContextVersionMajor     = c.GLFW_CONTEXT_VERSION_MAJOR,
-        ContextVersionMinor     = c.GLFW_CONTEXT_VERSION_MINOR,
-        ContextRevision         = c.GLFW_CONTEXT_REVISION,
-        OpenGLForwardCompat     = c.GLFW_OPENGL_FORWARD_COMPAT,
-        OpenGLDebugContext      = c.GLFW_OPENGGL_DEBUG_CONTEXT,
-        OpenGLProfile           = c.GLFW_OPENGL_PROFILE,
-        ContextReleaseBehavior  = c.GLFW_CONTEXT_RELEASE_BEHAVIOR,
-        ContextNoError          = c.GLFW_CONTEXT_NO_ERROR,
-        ContextRobustness       = c.GLFW_CONTEXT_ROBUSTNESS,
+        Focused = c.GLFW_FOCUSED,
+        Iconified = c.GLFW_ICONIFIED,
+        Maximized = c.GLFW_MAXIMIZED,
+        Hovered = c.GLFW_HOVERED,
+        Visible = c.GLFW_VISIBLE,
+        Resizable = c.GLFW_RESIZABLE,
+        Decorated = c.GLFW_DECORATED,
+        AutoIconify = c.GLFW_AUTO_ICONIFY,
+        Floating = c.GFLW_FLOATING,
+        TransparentFramebuffer = c.GLFW_TRANSPARENT_FRAMEBUFFER,
+        FocusOnShow = c.GLFW_FOCUS_ON_SHOW,
+        ClientApi = c.GLFW_CLIENT_API,
+        ContextCreationApi = c.GLFW_CONTEXT_CREATION_API,
+        ContextVersionMajor = c.GLFW_CONTEXT_VERSION_MAJOR,
+        ContextVersionMinor = c.GLFW_CONTEXT_VERSION_MINOR,
+        ContextRevision = c.GLFW_CONTEXT_REVISION,
+        OpenGLForwardCompat = c.GLFW_OPENGL_FORWARD_COMPAT,
+        OpenGLDebugContext = c.GLFW_OPENGGL_DEBUG_CONTEXT,
+        OpenGLProfile = c.GLFW_OPENGL_PROFILE,
+        ContextReleaseBehavior = c.GLFW_CONTEXT_RELEASE_BEHAVIOR,
+        ContextNoError = c.GLFW_CONTEXT_NO_ERROR,
+        ContextRobustness = c.GLFW_CONTEXT_ROBUSTNESS,
     };
 
     pub const Attribute = union(AttributeName) {
@@ -256,122 +256,117 @@ pub const Window = struct {
     /// This function returns the value of an attribute of the specified window
     /// or its OpenGL or OpenGL ES context.
     pub fn getAttrib(self: Self, attrib: AttributeName) !Attribute {
-        var attribute = blk: { switch (attrib) {
-            .Focused
-                => {
+        var attribute = blk: {
+            switch (attrib) {
+                .Focused => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .Focused = value == c.GLFW_TRUE };
                 },
-            .Iconified
-                => {
+                .Iconified => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .Iconified = value == c.GLFW_TRUE };
                 },
-            .Maximized
-                => {
+                .Maximized => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .Maximized = value == c.GLFW_TRUE };
                 },
-            .Hovered
-                => {
+                .Hovered => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .Hovered = value == c.GLFW_TRUE };
                 },
-            .Visible
-                => {
+                .Visible => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .Visible = value == c.GLFW_TRUE };
                 },
-            .Resizable
-                => {
+                .Resizable => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .Resizable = value == c.GLFW_TRUE };
                 },
-            .Decorated
-                => {
+                .Decorated => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .Decorated = value == c.GLFW_TRUE };
                 },
-            .AutoIconify
-                => {
+                .AutoIconify => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .AutoIconify = value == c.GLFW_TRUE };
                 },
-            .Floating
-                => {
+                .Floating => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .Floating = value == c.GLFW_TRUE };
                 },
-            .TransparentFramebuffer
-                => {
+                .TransparentFramebuffer => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .TransparentFramebuffer = value == c.GLFW_TRUE };
                 },
-            .FocusOnShow
-                => {
+                .FocusOnShow => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .FocusOnShow = value == c.GLFW_TRUE };
                 },
-            .ClientApi
-                => {
+                .ClientApi => {
                     var value = @intToEnum(ClientApi, c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib)));
-                    break :blk Attribute{ .ClientApi = value, };
+                    break :blk Attribute{
+                        .ClientApi = value,
+                    };
                 },
-            .ContextCreationApi
-                => {
+                .ContextCreationApi => {
                     var value = @intToEnum(ContextCreationApi, c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib)));
-                    break :blk Attribute{ .ContextCreationApi = value, };
+                    break :blk Attribute{
+                        .ContextCreationApi = value,
+                    };
                 },
-            .ContextVersionMajor
-                => {
+                .ContextVersionMajor => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
-                    break :blk Attribute{ .ContextVersionMajor = value, };
+                    break :blk Attribute{
+                        .ContextVersionMajor = value,
+                    };
                 },
-            .ContextVersionMinor
-                => {
+                .ContextVersionMinor => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
-                    break :blk Attribute{ .ContextVersionMinor = value, };
+                    break :blk Attribute{
+                        .ContextVersionMinor = value,
+                    };
                 },
-            .ContextRevision
-                => {
+                .ContextRevision => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
-                    break :blk Attribute{ .ContextRevision = value, };
+                    break :blk Attribute{
+                        .ContextRevision = value,
+                    };
                 },
-            .OpenGLForwardCompat
-                => {
+                .OpenGLForwardCompat => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .OpenGLForwardCompat = value == c.GLFW_TRUE };
                 },
-            .OpenGLDebugContext
-                => {
+                .OpenGLDebugContext => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .OpenGLDebugContext = value == c.GLFW_TRUE };
                 },
-            .OpenGLProfile
-                => {
+                .OpenGLProfile => {
                     var value = @intToEnum(OpenGLProfile, c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib)));
-                    break :blk Attribute{ .OpenGLProfile = value, };
+                    break :blk Attribute{
+                        .OpenGLProfile = value,
+                    };
                 },
-            .ContextReleaseBehavior
-                => {
+                .ContextReleaseBehavior => {
                     var value = @intToEnum(ContextReleaseBehavior, c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib)));
-                    break :blk Attribute{ .ContextReleaseBehavior = value, };
+                    break :blk Attribute{
+                        .ContextReleaseBehavior = value,
+                    };
                 },
-            .ContextNoError
-                => {
+                .ContextNoError => {
                     var value = c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib));
                     break :blk Attribute{ .ContextNoError = value == c.GLFW_TRUE };
                 },
-            .ContextRobustness
-                => {
+                .ContextRobustness => {
                     var value = @intToEnum(ContextRobustness, c.glfwGetWindowAttrib(self.handle, @enumToInt(attrib)));
-                    break :blk Attribute{ .ContextRobustness = value, };
+                    break :blk Attribute{
+                        .ContextRobustness = value,
+                    };
                 },
-        } };
+            }
+        };
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -390,17 +385,16 @@ pub const Window = struct {
     /// value will take effect if the window is later made full screen.
     pub fn setAttrib(self: *Self, attribute: Attribute) !void {
         switch (attribute) {
-            Resizable               => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
-            Decorated               => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
-            AutoIconify             => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
-            Floating                => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
-            FocusOnShow             => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
+            Resizable => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
+            Decorated => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
+            AutoIconify => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
+            Floating => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
+            FocusOnShow => |value| c.glfwSetWindowAttrib(self.handle, @enumToInt(attribute), toGLFWBool(value)),
             else => std.debug.panic("unsupported attribute in setter"),
         }
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -464,12 +458,7 @@ pub const Window = struct {
 
         if (handle == null) {
             glfw.getError() catch |err| switch (err) {
-                glfw.Error.NotInitialized,
-                glfw.Error.InvalidValue,
-                glfw.Error.ApiUnavailable,
-                glfw.Error.VersionUnavailable,
-                glfw.Error.FormatUnavailable,
-                glfw.Error.PlatformError => return err,
+                glfw.Error.NotInitialized, glfw.Error.InvalidValue, glfw.Error.ApiUnavailable, glfw.Error.VersionUnavailable, glfw.Error.FormatUnavailable, glfw.Error.PlatformError => return err,
                 else => unreachable,
             };
         }
@@ -486,8 +475,7 @@ pub const Window = struct {
         c.glfwDestroyWindow(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => std.debug.panic("cannot handle: {}\n", .{ err }),
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => std.debug.panic("cannot handle: {}\n", .{err}),
             else => unreachable,
         };
     }
@@ -523,8 +511,7 @@ pub const Window = struct {
         c.glfwSetWindowTitle(self.handle, title.ptr);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -543,7 +530,7 @@ pub const Window = struct {
     /// settings. The selected images will be rescaled as needed. Good sizes
     /// include 16x16, 32x32 and 48x48.
     pub fn setIcon(self: *Self, icon: glfw.Image) !void {
-        return self.setIcons(&[1]glfw.Image{ icon });
+        return self.setIcons(&[1]glfw.Image{icon});
     }
 
     /// This function sets the icon of the specified window. If passed an array
@@ -563,8 +550,7 @@ pub const Window = struct {
         c.glfwSetWindowIcon(self.handle, @intCast(i32, icons.len), icons.ptr);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -582,8 +568,7 @@ pub const Window = struct {
         c.glfwGetWindowPos(self.handle, &position.x, &position.y);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -605,8 +590,7 @@ pub const Window = struct {
         c.glfwSetWindowPos(self.handle, position.x, position.y);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -620,8 +604,7 @@ pub const Window = struct {
         c.glfwGetWindowSize(self.handle, &size.width, &size.height);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -645,8 +628,7 @@ pub const Window = struct {
         c.glfwSetWindowSize(self.handle, size.width, size.height);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -670,8 +652,7 @@ pub const Window = struct {
         c.glfwSetWindowSizeLimits(self.handle, minwidth, minheight, maxwidth, maxheight);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -694,8 +675,7 @@ pub const Window = struct {
         }
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -709,8 +689,7 @@ pub const Window = struct {
         c.glfwGetFramebufferSize(self.handle, &framebufferSize.width, &framebufferSize.height);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -731,8 +710,7 @@ pub const Window = struct {
         c.glfwGetWindowFrameSize(self.handle, &frameSize.left, &frameSize.top, &frameSize.right, &frameSize.bottom);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -756,8 +734,7 @@ pub const Window = struct {
         c.glfwGetWindowContentScale(self.handle, &scale.x, &scale.y);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -775,8 +752,7 @@ pub const Window = struct {
         var opacity = c.glfwGetWindowOpacity(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -796,8 +772,7 @@ pub const Window = struct {
         c.glfwSetWindowOpacity(self.handle, opacity);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -812,8 +787,7 @@ pub const Window = struct {
         c.glfwIconifyWindow(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -828,8 +802,7 @@ pub const Window = struct {
         c.glfwRestoreWindow(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -844,8 +817,7 @@ pub const Window = struct {
         c.glfwMaximizeWindow(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -862,8 +834,7 @@ pub const Window = struct {
         c.glfwShowWindow(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -875,8 +846,7 @@ pub const Window = struct {
         c.glfwHideWindow(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -901,8 +871,7 @@ pub const Window = struct {
         c.glfwFocusWindow(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -917,8 +886,7 @@ pub const Window = struct {
         c.glfwRequestWindowAttention(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -929,8 +897,7 @@ pub const Window = struct {
         var handle = c.glfwGetWindowMonitor(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
 
@@ -962,8 +929,7 @@ pub const Window = struct {
         c.glfwSetWindowMonitor(self.handle, if (monitor) |m| m.handle else null, position.x, position.y, size.width, size.height, if (refreshRate) |rr| rr else c.GLFW_DONT_CARE);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError => return err,
             else => unreachable,
         };
     }
@@ -979,7 +945,7 @@ pub const Window = struct {
             else => unreachable,
         };
     }
-    
+
     /// This function returns the current value of the user-defined pointer of
     /// the specified window. The initial value is `null`.
     pub fn getUserPointer(self: Self, comptime T: type) !?*T {
@@ -1012,9 +978,7 @@ pub const Window = struct {
         c.glfwSwapBuffers(self.handle);
 
         glfw.getError() catch |err| switch (err) {
-            glfw.Error.NotInitialized,
-            glfw.Error.PlatformError,
-            glfw.Error.NoWindowContext => return err,
+            glfw.Error.NotInitialized, glfw.Error.PlatformError, glfw.Error.NoWindowContext => return err,
             else => unreachable,
         };
     }
